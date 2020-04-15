@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+}
+
+.left-half {
+    background-color: $color-secondary;
+    flex: 1;
+    height: 100vh;//regerger
+    
+}
+
+.right-half {
+    background-color: $color-primary;
+    flex: 1;
+    flex-grow: 4;
+    height: 100%;
+}

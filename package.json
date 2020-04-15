@@ -1,0 +1,33 @@
+{
+  "name": "weather_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "watch:sass": "node-sass src/sass/main.scss dist/css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver dev",
+    "compile:sass": "node-sass src/sass/main.scss dist/css/style.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
+    "compress:css": "node-sass css/style.concat.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "webpack:serv": "webpack-dev-server --mode development --open"
+  },
+  "author": "Rafał Stróżyk",
+  "license": "ISC",
+  "devDependencies": {
+    "concat": "^1.0.3",
+    "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.26.3",
+    "html-webpack-plugin": "^4.0.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
