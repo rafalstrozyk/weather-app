@@ -9,6 +9,7 @@ const state = {};
 /* ******************** */
 const controlSearch = async () => {
     const query = searchView.getInput();
+    let data;
 
     if(query) {
         state.search = new Search(query);
@@ -16,9 +17,11 @@ const controlSearch = async () => {
         searchView.cleanInput();
 
         try {
-            state.search.getResults();
+            await state.search.getResults();
+            searchView.clearWeather();
+            searchView.renderWeatcher(state.search);
         } catch(err) {
-            console.log(err);
+            console.log(err);//ergreger
         }
     }
 }
@@ -26,21 +29,3 @@ const controlSearch = async () => {
 elements.searchButton.addEventListener('click', () => {
     controlSearch();
 });
-
-
-
-
-
-
-
-// const proxyurl = "https://cors-anywhere.herokuapp.com/";
-// const url = "http://api.weatherstack.com/current?access_key=b7a50426b21779f17b83e2726da3d590&query=Warsaw";
-
-// fetch(proxyurl + url)
-//     .then(res => res.json())
-//     .then(data => {
-//         console.log(data["request"]);
-//         console.log(data["location"]);
-//         console.log(data["current"]["temperature"]);
-//     })
-//     .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))

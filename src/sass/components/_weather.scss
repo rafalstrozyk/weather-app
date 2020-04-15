@@ -1,0 +1,100 @@
+.weather {
+    height: auto;
+    padding: 4rem;
+    background-color: $color-primary;
+
+    &-js {
+        height: 80vh;
+    }
+
+    &__city {
+        border: 3px solid $color-secondary;
+        border-radius: 3px;
+        padding: 1rem .5rem;
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        box-shadow: 0 1rem 2.5rem rgba($color-black, .3);
+
+        &-name {
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+    }
+
+    &__location {
+        padding: 2rem;
+        border-top: 1px solid $color-secondary;
+        flex: 1;
+    }
+
+    &__info {
+        padding: 2rem;
+        border-top: 1px solid $color-secondary;
+        flex: 1;
+    }
+
+    &__h3 {
+        font-size: 2.2rem;
+        color: $color-secondary;
+    }
+
+    &__table {
+        font-size: 1.6rem;
+        line-height: 1.7; 
+        width: 80%;
+        border-collapse: collapse;
+        box-shadow: 0.5rem 1rem 4rem rgba($color-black, .3);
+
+        
+        tr {
+            border: 2px solid $color-secondary;
+            border-radius: 3px;
+        }
+
+        td,
+        th {
+            padding:  .8rem;
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+
+        th {
+            text-transform: uppercase;
+        }
+
+    }
+
+    &__desc {
+        padding: 5rem;
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-top: 1px solid  $color-secondary;
+
+
+        &-img {
+            display: inline-block;
+            border-radius: 50%;
+            width: 6rem;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            right: 35%;
+            transform: translate(-35%, -50%);
+        }
+
+        &-inf {
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 700;
+            position: absolute;
+            top: 50%;
+            right: 45%;
+            transform: translate(-45%, -50%);
+            text-transform: uppercase;
+        }
+    }
+
+}
