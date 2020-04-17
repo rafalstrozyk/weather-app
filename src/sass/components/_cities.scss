@@ -1,0 +1,45 @@
+.cities {
+    height: 80vh;
+
+    &__item {
+        padding: 2rem;
+        margin-right: 1rem;
+        border: 1px solid $color-secondary-dark-2;
+        background-color: $color-primary;
+        height: 100%;
+        position: relative;
+        transition: all .3s;
+
+        h3 {
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 100;
+            margin-right: 2rem;
+        }
+
+        p {
+            display: inline-block;
+            font-size: 1.8rem;
+            color: $color-secondary-dark-2;
+        }
+
+        &:hover {
+            background-color: $color-secondary;
+            transform: scale(1.05);
+            box-shadow: 0.5rem 1rem 2rem rgba($color-black, .3);
+            z-index: 3;
+        }
+
+
+    }
+
+    &__icon {
+        display: inline-block;
+        width: 5rem;
+        height: auto;
+        border-radius: 50%;
+        position: absolute;
+        top: 23%;
+        left: 70%;
+    }
+}

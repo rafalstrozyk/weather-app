@@ -7,6 +7,7 @@ export const cleanInput = () => elements.searchInput.value = '';
 export const clearWeather = () => {
     elements.showWeather.innerHTML = '';
     elements.showWeather.classList.add('weather-js');
+    // elements.showCities.innerHTML = '';
 
 };
 
@@ -98,4 +99,28 @@ export const renderWeatcher = weather => {
         console.log('Nie ma');
     }
     
+};
+
+export const renderCity = weather => {
+    const markup = `
+    <div class="cities__item">
+        <h3>${weather.name}</h3>
+        <p>${weather.temperature} &#8451;</p>
+        <img src="${weather.weather_icons}" class="cities__icon" alt="desc icon">
+    </div>
+    `;
+
+    elements.showCities.insertAdjacentHTML('afterbegin', markup);
+};
+
+export const renderCityOnBar = weather => {
+    const markup = `
+    <div class="cities__item">
+        <h3>${weather.name}</h3>
+        <p>${weather.temperature} &#8451;</p>
+        <img src="${weather.weather_icons}" class="cities__icon" alt="desc icon">
+    </div>
+    `;
+
+    document.querySelector('.simplebar-content').insertAdjacentHTML('afterbegin', markup);
 };
