@@ -1,0 +1,19 @@
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% { 
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin_zoom {
+    0% {
+        transform: rotate(0) scale(0);
+    }
+
+    100% { 
+        transform: rotate(360deg) scale(100%);//trhrthrt
+    }
+}

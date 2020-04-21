@@ -7,8 +7,6 @@ export const cleanInput = () => elements.searchInput.value = '';
 export const clearWeather = () => {
     elements.showWeather.innerHTML = '';
     elements.showWeather.classList.add('weather-js');
-    // elements.showCities.innerHTML = '';
-
 };
 
 export const renderWeatcher = weather => {
@@ -101,9 +99,10 @@ export const renderWeatcher = weather => {
     
 };
 
-export const renderCity = weather => {
+export const renderCity = (weather, city) => {
+
     const markup = `
-    <div class="cities__item">
+    <div class="cities__item" id="${city.id}">
         <h3>${weather.name}</h3>
         <p>${weather.temperature} &#8451;</p>
         <img src="${weather.weather_icons}" class="cities__icon" alt="desc icon">
@@ -113,9 +112,9 @@ export const renderCity = weather => {
     elements.showCities.insertAdjacentHTML('afterbegin', markup);
 };
 
-export const renderCityOnBar = weather => {
+export const renderCityOnBar = (weather, city) => {
     const markup = `
-    <div class="cities__item">
+    <div class="cities__item" id="${city.id}">
         <h3>${weather.name}</h3>
         <p>${weather.temperature} &#8451;</p>
         <img src="${weather.weather_icons}" class="cities__icon" alt="desc icon">

@@ -3,6 +3,7 @@
 @import "abstract/variables";
 
 @import "base/base";
+@import "base/animation";
 @import "base/typography";
 @import "base/utilities";
 
@@ -12,3 +13,4 @@
 @import "components/button";
 @import "components/weather";
 @import "components/cities";
+@import "components/loader";
