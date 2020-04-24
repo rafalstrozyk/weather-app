@@ -7,6 +7,11 @@
         height: 80vh;
     }
 
+    &__refresh {
+        float: right;
+
+    }
+
     &__city {
         border: 3px solid $color-secondary;
         border-radius: 3px;
@@ -14,6 +19,7 @@
         display: block;
         width: 50%;
         margin: 0 auto;
+        position: relative;
         box-shadow: 0 1rem 2.5rem rgba($color-black, .3);
 
         &-name {

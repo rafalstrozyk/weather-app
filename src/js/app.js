@@ -11,9 +11,8 @@ state.cities = new Cities();
 /* ******************** */
 // SEARCH CONTROLLER
 /* ******************** */
-const controlSearch = async () => {
-    const query = searchView.getInput();
-    
+const controlSearch = async (query) => {
+    // const query = searchView.getInput();
 
     if(query) {
         state.search = new Search(query);
@@ -48,9 +47,9 @@ const controlSearch = async () => {
                     }
                 }
                 searchView.renderWeatcher(state.search);
-                
-
-               
+                document.querySelector('.refresh-js').addEventListener('click', () => {
+                    controlSearch(citi);
+                });
             }
             
         } catch(err) {
@@ -64,14 +63,12 @@ const controlSearch = async () => {
 // CITIES HISTORY CONTROLLER
 /* ******************** */
 
-const contronCities = async (query) => {
+const controlCities = async (query) => {
     if(query) {
         state.search = new Search(query);
         searchView.cleanInput();
         searchView.clearWeather();
-        let simplebar = document.querySelector('.simplebar-content');
         renderLoader();
-
         try {
             await state.search.getResults();
             removeLoader();
@@ -100,9 +97,17 @@ elements.showCities.addEventListener('click', e => {
         
         citi = state.cities.searchCiti(Number(element.parentElement.id));
     }
-    contronCities(citi);
+    controlCities(citi);
 });
 
 elements.searchButton.addEventListener('click', () => {
-    controlSearch();
+    const query = searchView.getInput();
+    controlSearch(query);
+});
+
+elements.searchInput.addEventListener('keyup', (e)  => {
+    if(e.keyCode === 13) {
+        const query = searchView.getInput();
+        controlSearch(query);
+    }
 });

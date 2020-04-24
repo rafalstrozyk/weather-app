@@ -9,6 +9,7 @@
         border-radius: 5px;
         transition: all .3s;
         position: relative;
+        text-align: center;
 
         font-size: $default-font-size;
         border: none;
@@ -30,5 +31,12 @@
     &--primary {
         color: $color-primary;
         background-color: $color-secondary-dark-2;
+
+        & i { color: $color-primary;}
+    }
+
+    & i {
+        font-size: 1.8rem;
+        
     }
 }

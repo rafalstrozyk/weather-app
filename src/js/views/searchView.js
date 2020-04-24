@@ -12,6 +12,9 @@ export const clearWeather = () => {
 export const renderWeatcher = weather => {
 
      const markup = `
+        <div class="weather__refresh">
+            <button class="btn btn--primary refresh-js">Refresh</button>
+        </div>
         <div class="weather__city u-center-text u-margin-bottom-medium">
         <h2 class="weather__city-name">${weather.query}</h2>
         </div>
@@ -97,15 +100,15 @@ export const renderWeatcher = weather => {
         console.log('Nie ma');
     }
     
-};
+};//RTHJTR
 
 export const renderCity = (weather, city) => {
 
     const markup = `
     <div class="cities__item" id="${city.id}">
+        <img src="${weather.weather_icons}" class="cities__icon" alt="desc icon">
         <h3>${weather.name}</h3>
         <p>${weather.temperature} &#8451;</p>
-        <img src="${weather.weather_icons}" class="cities__icon" alt="desc icon">
     </div>
     `;
 
@@ -115,9 +118,9 @@ export const renderCity = (weather, city) => {
 export const renderCityOnBar = (weather, city) => {
     const markup = `
     <div class="cities__item" id="${city.id}">
+        <img src="${weather.weather_icons}" class="cities__icon" alt="desc icon">
         <h3>${weather.name}</h3>
         <p>${weather.temperature} &#8451;</p>
-        <img src="${weather.weather_icons}" class="cities__icon" alt="desc icon">
     </div>
     `;
 
