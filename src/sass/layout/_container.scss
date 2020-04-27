@@ -1,11 +1,26 @@
 .container {
     display: flex;
+
+    @include respond(tab-port) {
+        display: block;
+    }
 }
 
 .left-half {
     background-color: $color-secondary;
     flex: 1;
     height: auto;
+    transition: all .3s;//rth
+
+    @include respond(tab-port) {
+        position: fixed;
+        top: 10%;
+        left: 0;
+        z-index: 500;
+        flex: none;
+        width: 100%;
+        background-color: transparent;
+    }
     
 }
 
@@ -13,4 +28,16 @@
     background-color: $color-primary;
     flex: 1;
     flex-grow: 4;
+
+    @include respond(tab-port) {
+        flex: none;
+    }
+}
+
+.topnav {
+    transition: all .3s;
+    @include respond(tab-port) {
+        display: none;
+        opacity: 0;
+    }
 }

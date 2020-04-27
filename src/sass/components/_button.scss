@@ -37,6 +37,17 @@
 
     & i {
         font-size: 1.8rem;
-        
+    }
+
+    &__menu {
+        position: fixed;
+        margin-top: 2rem;
+        margin-left: 2rem;
+        display: none;
+        z-index: 400;
+
+        @include respond(tab-port) {
+            display: block;
+        }
     }
 }

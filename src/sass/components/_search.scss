@@ -5,6 +5,12 @@
     border: 1px solid $color-primary;
     height: auto;
 
+    &__toppad {
+        @include respond(phone) {
+            padding-top: 5rem;
+        }
+    }
+
     &__input {
         width: 75%;
         height: 4rem;

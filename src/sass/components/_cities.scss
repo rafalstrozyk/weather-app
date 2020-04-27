@@ -1,5 +1,9 @@
 .cities {
     height: 80vh;
+    @include respond(tab-port) {
+        height: 100%;
+        width: 50%;
+    }
 
     &__item {
         padding: 1rem;
@@ -22,7 +26,7 @@
             display: inline-block;
             font-size: 1.8rem;
             color: $color-secondary-dark-2;
-        }//trhtr
+        }
 
         &:hover {
             background-color: $color-secondary;

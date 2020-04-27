@@ -5,15 +5,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/icons.css">
-    <link rel="stylesheet" href="css/simplebar.css">
-    <title>Document</title>
+    <title>WeatcherApp</title>
 </head>
 
 <body>
     
+    <script>
+        function historyMenu() {
+            const x = document.getElementById('top_nav');
+            if (x.className === "left-half") {
+              x.className += " topnav";
+            } else {
+                x.className = "left-half";
+            }
+        }
+    </script>
+
     <section class="container">
-        <div class="left-half">
+        <!-- <button class="btn btn--primary btn__menu" onclick="historyMenu()">History</button> -->
+        <div class="left-half topnav" id="top_nav">
             <div class="cities" id="scroll"  data-simplebar data-simplebar-auto-hide="false">
                 <!-- <div class="cities__item">
                     <img src="http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png" class="cities__icon" alt="desc icon">

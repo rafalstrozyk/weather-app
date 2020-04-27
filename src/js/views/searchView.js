@@ -29,27 +29,22 @@ export const renderWeatcher = weather => {
                 <tr>
                     <th>Name:</th>
                     <td>${weather.name}</td>
-                    <td></td>
                 </tr>
                 <tr>
                     <th>Country:</th>
                     <td>${weather.country}</td>
-                    <td></td>
                 </tr>
                 <tr>
                     <th>Coord:</th>
-                    <td>lat: ${weather.lat}</td>
-                    <td>lon: ${weather.lon}</td>
+                    <td>lat: ${weather.lat} lon: ${weather.lon}</td>
                 </tr>
                 <tr>
                     <th>Timezone:</th>
                     <td>${weather.timezone_id}</td>
-                    <td></td>
                 </tr>
                 <tr>
                     <th>Local time:</th>
                     <td>${weather.localtime}</td>
-                    <td></td>
                 </tr>
             </table>
         </div>
@@ -92,15 +87,21 @@ export const renderWeatcher = weather => {
         </div>
         </div>
     `
+    const button = `
+        <button class="btn btn--primary btn__menu" onclick="historyMenu()">History</button>
+    `
 
     if(weather) {
         elements.showWeather.classList.remove('weather-js');
         elements.showWeather.insertAdjacentHTML('beforeend', markup);
+        elements.showCities.parentElement.parentElement.insertAdjacentHTML('afterbegin', button);
+        // search__toppad ewrgferger
+        document.querySelector('.search').classList.add('search__toppad');
     } else {
         console.log('Nie ma');
     }
     
-};//RTHJTR
+};
 
 export const renderCity = (weather, city) => {
 
